@@ -1,0 +1,34 @@
+﻿<!-- Views/Home/Index.cshtml -->
+@{
+    ViewData["Title"] = "WebRTC Test";
+}
+
+<div class="container">
+    <h2>WebRTC Media Test</h2>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Local Stream</h3>
+            <video id="localVideo" autoplay playsinline></video>
+        </div>
+        <div class="col-md-6">
+            <h3>Remote Stream</h3>
+            <video id="remoteVideo" autoplay playsinline></video>
+        </div>
+    </div>
+
+    <div class="controls mt-3">
+        <button id="startButton" class="btn btn-primary">Start Media</button>
+        <button id="callButton" class="btn btn-success" disabled>Start Call</button>
+        <button id="hangupButton" class="btn btn-danger" disabled>Hangup</button>
+    </div>
+
+    <div class="log-area mt-3">
+        <h4>Connection Logs</h4>
+        <pre id="logArea" style="height: 200px; overflow-y: scroll;"></pre>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/webrtc-client.js"></script>
+}
